@@ -23,6 +23,8 @@ try:
     # 사용자 로그인 후 CAPTCHA 입력 대기
     input("🔴 [CAPTCHA 입력 후 로그인]한 다음, [수강신청 페이지]에 도달하면 Enter 키를 누르세요. 🔴")
 
+    count = 0  # 실행 횟수 카운트
+
     while True:
         # 현재 시간을 확인
         now = datetime.now()
@@ -49,6 +51,10 @@ try:
                 alert = WebDriverWait(driver, 5).until(EC.alert_is_present())  # 팝업이 뜰 때까지 기다림
                 alert.accept()  # 확인(엔터) 누르기
                 print("✅ 팝업 창에서 엔터 입력 완료!")
+
+                 # 실행 횟수 증가 및 출력
+                count += 1
+                print(f"🔄 현재 실행 횟수: {count}")
 
             except Exception as e:
                 print(f"🚨 버튼 클릭 오류 발생: {e}")
