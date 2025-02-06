@@ -29,7 +29,7 @@ try:
 
         # 초와 밀리초가 모두 0일 때 대기 (정확히 매 분 정각 이후)
         if now.second == 0 and now.microsecond == 0:
-            time.sleep(0.1)  # 0.1초 대기 후 작업 실행
+            time.sleep(0.2)  # 0.2초 대기 후 작업 실행
             try:
                 # 1️⃣ 첫 번째 버튼 (id=cb_grd_basket) 클릭
                 first_button = WebDriverWait(driver, 10).until(
